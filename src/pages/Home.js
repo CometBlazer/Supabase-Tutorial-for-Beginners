@@ -38,12 +38,14 @@ const Home = () => {
       )}
       {smoothies && (
         <div className="smoothies">
-          {smoothies.map(smoothie => (
-            <div key={smoothie.id} className="smoothie">
-              <h2>{smoothie.title}</h2>
-              {/* <p>{smoothie.emoji}</p> */}
-            </div>
-          ))}
+          <div className="smoothie-grid">
+            {/* Order-by buttons */}
+            {smoothies.map(smoothie => (
+              <div key={smoothie.id} className="smoothie">
+                <SmoothieCard key={smoothie.id} smoothie={smoothie} />
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
